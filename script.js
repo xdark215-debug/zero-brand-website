@@ -1,15 +1,28 @@
 const $=s=>document.querySelector(s), $$=s=>document.querySelectorAll(s);
-const menuBtn=$('#menuBtn'), nav=$('#mainNav');
-menuBtn?.addEventListener('click',()=>{const open=nav.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));document.body.classList.toggle('no-scroll',open)});
-$$('#mainNav a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menuBtn?.setAttribute('aria-expanded','false');document.body.classList.remove('no-scroll')}));
-const searchPanel=$('#searchPanel'),searchInput=$('#siteSearch'),results=$('#searchResults');
-const pages=[['Collections','Explore future ZERO chapters and the visual system.','#collections'],['About ZERO','The philosophy behind starting from zero.','#about'],['Journal','Studio notes and announcements from ZERO.','#journal'],['Community','Join the ZERO mailing list and follow the brand.','#contact']];
-function renderSearch(q=''){const term=q.trim().toLowerCase();const found=pages.filter(x=>(x[0]+' '+x[1]).toLowerCase().includes(term));results.innerHTML=found.length?found.map(x=>`<a class="search-result" href="${x[2]}"><b>${x[0]}</b><p>${x[1]}</p></a>`).join(''):'<p>No ZERO result found.</p>';$$('.search-result').forEach(a=>a.addEventListener('click',closeSearch))}
-function openSearch(){searchPanel.hidden=false;document.body.classList.add('no-scroll');renderSearch();setTimeout(()=>searchInput.focus(),50)}
+const menuBtn=$('#menuBtn'), menuPanel=$('#menuPanel');
+function closeMenu(){menuPanel.hidden=true;menuBtn.setAttribute('aria-expanded','false');document.body.classList.remove('no-scroll')}
+menuBtn?.addEventListener('click',()=>{const open=menuPanel.hidden;menuPanel.hidden=!open;menuBtn.setAttribute('aria-expanded',String(open));document.body.classList.toggle('no-scroll',open)});
+$$('.menu-inner a').forEach(a=>a.addEventListener('click',closeMenu));
+
+const searchPanel=$('#searchPanel'), searchInput=$('#siteSearch'), results=$('#searchResults');
+const pages=[
+ ['New','The latest ZERO chapter and launch direction.','#new'],
+ ['Collections','Explore the ZERO collection chapters.','#collections'],
+ ['About ZERO','The philosophy behind starting from zero.','#about'],
+ ['Journal','Studio notes, announcements and updates.','#journal'],
+ ['Community','Follow the ZERO build and future releases.','#contact']
+];
 function closeSearch(){searchPanel.hidden=true;document.body.classList.remove('no-scroll')}
-$('#searchBtn')?.addEventListener('click',openSearch);$('#closeSearch')?.addEventListener('click',closeSearch);searchInput?.addEventListener('input',e=>renderSearch(e.target.value));document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!searchPanel.hidden)closeSearch()});
-const collectionCopy={001:['ORIGIN','The first chapter. A visual language built around starting with nothing and choosing to build.'],002:['MACHINE','A future-facing chapter built around systems, movement, engineering and controlled chaos.'],003:['UNKNOWN','An experimental chapter where ZERO pushes beyond the familiar.']};
-$$('.collection-card').forEach(card=>card.addEventListener('click',()=>{ $$('.collection-card').forEach(c=>c.classList.remove('active'));card.classList.add('active');const id=card.dataset.collection;const [name,copy]=collectionCopy[id];$('#collectionDetail').innerHTML=`<span>SELECTED / ${id}</span><strong>${name}</strong><p>${copy}</p>`}));
-const form=$('#subscribeForm');form?.addEventListener('submit',e=>{e.preventDefault();const email=$('#email').value.trim();if(!email)return;localStorage.setItem('zeroSubscriber',email);$('#formMessage').textContent='YOU ARE ON THE ZERO LIST. WATCH THIS SPACE.';form.reset()});
-if(localStorage.getItem('zeroSubscriber'))$('#formMessage').textContent='ZERO LIST / REGISTERED ON THIS DEVICE.';
-$$('[data-coming]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();$('#formMessage').textContent=`${a.dataset.coming.toUpperCase()} LINK WILL BE ADDED BEFORE LAUNCH.`;document.querySelector('#contact').scrollIntoView({behavior:'smooth'})}));
+function renderSearch(query=''){
+ results.replaceChildren();
+ const term=query.trim().toLowerCase();
+ const found=pages.filter(p=>(p[0]+' '+p[1]).toLowerCase().includes(term));
+ if(!found.length){const p=document.createElement('p');p.textContent='No ZERO result found.';results.appendChild(p);return}
+ found.forEach(p=>{const a=document.createElement('a');a.className='search-result';a.href=p[2];const strong=document.createElement('strong');strong.textContent=p[0];const desc=document.createElement('p');desc.textContent=p[1];a.append(strong,desc);a.addEventListener('click',closeSearch);results.appendChild(a)})
+}
+$('#searchBtn')?.addEventListener('click',()=>{searchPanel.hidden=false;document.body.classList.add('no-scroll');renderSearch();setTimeout(()=>searchInput?.focus(),50)});
+$('#closeSearch')?.addEventListener('click',closeSearch);
+searchInput?.addEventListener('input',e=>renderSearch(e.target.value));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){if(!searchPanel.hidden)closeSearch();else closeMenu()}});
+
+$$('[data-coming]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();alert(`${a.dataset.coming} link will be added when ZERO launches its official account.`)}));

@@ -1,45 +1,113 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="ZERO — an independent streetwear label built from the ground up.">
-<meta name="theme-color" content="#101010">
-<title>ZERO — From Zero, We Build.</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111111">
+  <meta name="description" content="ZERO — an independent Filipino streetwear label built from the ground up.">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'">
+  <title>ZERO — From Zero, We Build.</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="ticker" aria-hidden="true">ZERO / 001 — ORIGIN · FROM ZERO, WE BUILD. · ZERO / 001 — ORIGIN · FROM ZERO, WE BUILD.</div>
-<header class="site-header" id="top">
-  <a class="brand" href="#top" aria-label="ZERO home">ZERO<span>®</span></a>
-  <nav id="mainNav" aria-label="Main navigation">
-    <a href="#collections">COLLECTIONS</a><a href="#about">ABOUT</a><a href="#journal">JOURNAL</a><a href="#contact">CONTACT</a>
-  </nav>
-  <div class="header-actions"><button class="icon-btn" id="searchBtn" aria-label="Open search">⌕</button><button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button></div>
-</header>
-<main>
-<section class="hero">
-  <div class="hero-copy"><p class="mono">001 / ORIGIN / PH</p><h1>START<br>AT <em>ZERO.</em></h1><p class="lead">An independent label for people building something from the ground up.</p><a class="cta" href="#about">ENTER ZERO <span>↘</span></a></div>
-  <div class="hero-art" aria-label="ZERO identity graphic"><div class="orbit o1"></div><div class="orbit o2"></div><div class="hero-zero">0</div><div class="serial">Z—001<br>ORIGIN<br>2026</div></div>
-</section>
-<section class="statement"><p class="mono">THE STARTING POINT</p><strong>ZERO ISN'T<br>THE END.</strong><p>It is the moment before everything changes.</p></section>
-<section id="collections" class="collections">
-  <div class="section-top"><div><p class="mono">01 / COLLECTIONS</p><h2>BUILT IN<br>CHAPTERS.</h2></div><span class="section-count">COMING SOON</span></div>
-  <div class="collection-grid">
-    <button class="collection-card active" data-collection="001"><span class="collection-num">001</span><span class="collection-title">ORIGIN</span><span class="collection-meta">THE BEGINNING ↗</span></button>
-    <button class="collection-card" data-collection="002"><span class="collection-num">002</span><span class="collection-title">MACHINE</span><span class="collection-meta">NEXT CHAPTER ↗</span></button>
-    <button class="collection-card" data-collection="003"><span class="collection-num">003</span><span class="collection-title">UNKNOWN</span><span class="collection-meta">EXPERIMENTAL ↗</span></button>
+  <div class="announcement">ZERO / 001 — ORIGIN · FROM ZERO, WE BUILD.</div>
+
+  <header class="site-header" id="top">
+    <a class="brand" href="#top" aria-label="ZERO home">ZERO<span>®</span></a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="#new">NEW</a>
+      <a href="#collections">COLLECTIONS</a>
+      <a href="#about">ABOUT</a>
+      <a href="#journal">JOURNAL</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-button" id="searchBtn" type="button" aria-label="Open search">⌕</button>
+      <button class="menu-button" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <div class="menu-panel" id="menuPanel" hidden>
+    <div class="menu-inner">
+      <p class="eyebrow">ZERO / MENU</p>
+      <a href="#top">HOME</a>
+      <a href="#new">NEW</a>
+      <a href="#collections">COLLECTIONS</a>
+      <a href="#updates">UPDATES</a>
+      <a href="#about">ABOUT</a>
+      <a href="#contact">CONTACT</a>
+    </div>
   </div>
-  <div class="collection-detail" id="collectionDetail"><span>SELECTED / 001</span><strong>ORIGIN</strong><p>The first chapter. A visual language built around starting with nothing and choosing to build.</p></div>
-</section>
-<section id="about" class="about"><div><p class="mono">02 / WHY ZERO?</p><h2>FROM NOTHING<br>TO <em>SOMETHING.</em></h2></div><div class="about-copy"><p>ZERO is a Philippine independent label built around ambition, progress, and the courage to begin.</p><p>Every chapter is a reminder: you don't need a head start to start.</p><div class="specs"><span>ORIGIN / PH</span><span>STATUS / BUILDING</span><span>EST. / 2026</span></div></div></section>
-<section id="journal" class="journal"><div class="section-top"><div><p class="mono">03 / JOURNAL</p><h2>THE<br>PROCESS.</h2></div><span class="section-count">UPDATES</span></div><div class="journal-list"><article><span>001 / 2026</span><h3>ZERO BEGINS HERE.</h3><p>The first chapter is being built from the ground up.</p></article><article><span>002 / 2026</span><h3>THE LANGUAGE OF ZERO.</h3><p>A visual system in progress: symbols, numbers, machines and movement.</p></article></div></section>
-<section id="contact" class="contact"><p class="mono">04 / COMMUNITY</p><h2>BUILD<br>WITH US.</h2><p>Join the ZERO mailing list for launch announcements, future chapters and studio notes.</p><form id="subscribeForm" class="subscribe"><label class="sr-only" for="email">Email address</label><input id="email" name="email" type="email" placeholder="YOUR EMAIL" required autocomplete="email"><button type="submit">JOIN ↗</button></form><p id="formMessage" class="form-message" role="status"></p><div class="socials"><a href="#" data-coming="Facebook">FACEBOOK</a><a href="#" data-coming="Instagram">INSTAGRAM</a><a href="#" data-coming="TikTok">TIKTOK</a></div></section>
-</main>
-<footer><strong>ZERO®</strong><span>FROM ZERO, WE BUILD.</span><span>© 2026</span></footer>
-<div class="search-panel" id="searchPanel" hidden><button class="close-search" id="closeSearch" aria-label="Close search">×</button><label for="siteSearch">SEARCH ZERO</label><input id="siteSearch" type="search" placeholder="TYPE TO SEARCH..." autocomplete="off"><div id="searchResults"></div></div>utton>
-<script src="script.js"></script>
-</body></html>
+
+  <main>
+    <section class="hero" id="new">
+      <div class="hero-copy">
+        <p class="eyebrow">001 / ORIGIN / PH</p>
+        <h1>START<br>AT <em>ZERO.</em></h1>
+        <p class="hero-lead">An independent label for people building something from the ground up.</p>
+        <a class="button" href="#collections">EXPLORE ZERO <span>↗</span></a>
+      </div>
+      <div class="hero-visual" aria-label="ZERO editorial visual">
+        <div class="visual-word">ZERO</div>
+        <div class="visual-caption">ORIGIN / 001<br>PH / 2026</div>
+      </div>
+    </section>
+
+    <section class="ticker" aria-label="Brand statement">
+      <div>FROM ZERO, WE BUILD.</div><div>FROM ZERO, WE BUILD.</div><div>FROM ZERO, WE BUILD.</div>
+    </section>
+
+    <section class="intro" id="about">
+      <div class="section-label"><span>01</span><span>WHY ZERO?</span></div>
+      <div class="intro-grid">
+        <h2>FROM NOTHING<br>TO <em>SOMETHING.</em></h2>
+        <div class="copy">
+          <p>ZERO is a Philippine independent label built around ambition, progress, and the courage to begin.</p>
+          <p>Every chapter is a reminder that you do not need a head start to start.</p>
+          <div class="facts"><span>ORIGIN / PH</span><span>STATUS / BUILDING</span><span>EST. / 2026</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="storefront" id="collections">
+      <div class="section-label"><span>02</span><span>COLLECTIONS</span></div>
+      <div class="store-head"><h2>BUILT FOR<br>THE <em>NEXT.</em></h2><span>COMING SOON</span></div>
+      <div class="collection-grid">
+        <article class="collection-card featured"><div class="card-number">001</div><div class="card-name">ORIGIN</div><p>The beginning. A visual language built around starting with nothing and choosing to build.</p><a href="#contact">NOTIFY ME ↗</a></article>
+        <article class="collection-card"><div class="card-number">002</div><div class="card-name">NEXT</div><p>The next chapter is being developed. Pieces will be revealed when they are ready.</p><span>IN DEVELOPMENT</span></article>
+        <article class="collection-card"><div class="card-number">003</div><div class="card-name">UNKNOWN</div><p>An experimental chapter for ideas that do not fit inside the familiar.</p><span>COMING LATER</span></article>
+      </div>
+    </section>
+
+    <section class="journal" id="journal">
+      <div class="section-label"><span>03</span><span>JOURNAL</span></div>
+      <div class="journal-list" id="updates">
+        <article><span>001 / 2026</span><div><h3>ZERO BEGINS HERE.</h3><p>The first chapter is being built from the ground up.</p></div><span>↗</span></article>
+        <article><span>002 / 2026</span><div><h3>THE LANGUAGE OF ZERO.</h3><p>A visual system in progress: symbols, numbers, movement and identity.</p></div><span>↗</span></article>
+        <article><span>003 / 2026</span><div><h3>MORE TO COME.</h3><p>New chapters, releases and studio notes will appear here.</p></div><span>↗</span></article>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <p class="eyebrow">04 / COMMUNITY</p>
+      <h2>BUILD<br>WITH US.</h2>
+      <p>Follow the build. Launch announcements and future chapters will be posted here.</p>
+      <div class="socials"><a href="#" data-coming="Facebook">FACEBOOK</a><a href="#" data-coming="Instagram">INSTAGRAM</a><a href="#" data-coming="TikTok">TIKTOK</a></div>
+      <p class="form-note" id="formMessage">Email signup will be connected when ZERO is ready to collect subscribers. No email is stored by this site.</p>
+    </section>
+  </main>
+
+  <footer><strong>ZERO®</strong><span>FROM ZERO, WE BUILD.</span><span>© 2026</span></footer>
+
+  <div class="search-panel" id="searchPanel" hidden>
+    <button class="close-search" id="closeSearch" type="button" aria-label="Close search">×</button>
+    <div class="search-inner">
+      <label for="siteSearch">SEARCH ZERO</label>
+      <input id="siteSearch" type="search" placeholder="TYPE TO SEARCH..." autocomplete="off">
+      <div id="searchResults" class="search-results" aria-live="polite"></div>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
