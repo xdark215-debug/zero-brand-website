@@ -9,3 +9,14 @@ img,video,svg{max-width:100%;height:auto}
 .grid,.products-grid,.collection-grid{width:100%;margin-left:0;margin-right:0}
 .hero,.hero-section{margin-left:0;margin-right:0}
 @media (max-width:640px){.container,.container-wide,.content,.section-inner,.hero-inner,.nav-inner{width:calc(100% - 32px);max-width:none}.grid,.products-grid,.collection-grid{grid-template-columns:1fr;width:100%}.hero{min-height:72vh}.hero-inner{text-align:center;padding-left:0;padding-right:0}.section-title{text-align:center}.nav-inner{padding-left:0;padding-right:0}}
+
+
+/* ZERO navigation reliability */
+.drawer{position:fixed;inset:0 auto 0 0;width:min(88vw,380px);z-index:1000;transform:translateX(-105%);transition:transform .28s ease;overflow:auto;background:#fff;color:#111;box-shadow:12px 0 40px rgba(0,0,0,.12)}
+.drawer.open{transform:translateX(0)}
+.drawer[aria-hidden="true"]{visibility:hidden}.drawer[aria-hidden="false"]{visibility:visible}
+.drawer-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:999;opacity:0;pointer-events:none;transition:opacity .2s ease}.drawer-backdrop.open{opacity:1;pointer-events:auto}
+body.menu-open{overflow:hidden}
+.drawer nav{display:flex;flex-direction:column;gap:0}.drawer nav a{display:block;padding:18px 24px;text-decoration:none;color:inherit;border-bottom:1px solid #eee}
+.icon-btn{cursor:pointer}.search-panel{z-index:1100}
+@media (max-width:640px){.drawer{width:86vw}.drawer nav a{padding:16px 20px}}
