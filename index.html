@@ -1,23 +1,90 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="ZERO — independent streetwear brand.">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none';">
-<title>ZERO — Streetwear</title><link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="ZERO — independent streetwear built from nothing.">
+  <title>ZERO — Streetwear</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="site-header"><a class="logo" href="#home" aria-label="ZERO home">ZERO</a><nav class="desktop-nav"><a href="#new">NEW</a><a href="#shop">SHOP</a><a href="#story">STORY</a><a href="#journal">JOURNAL</a></nav><div class="header-actions"><button class="icon-btn" id="searchBtn" aria-label="Search">⌕</button><button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-expanded="false">☰</button></div></header>
-<aside class="drawer" id="drawer" aria-hidden="true"><div class="drawer-top"><span>MENU</span><button class="icon-btn" id="closeMenu" aria-label="Close menu">×</button></div><nav><a href="#home">HOME</a><a href="#new">NEW</a><a href="#shop">SHOP</a><a href="#story">STORY</a><a href="#journal">JOURNAL</a><a href="#contact">CONTACT</a></nav><p>ZERO / 001<br>BUILT FROM NOTHING.</p></aside>
-<div class="search-panel" id="searchPanel" aria-hidden="true"><form id="searchForm"><input id="searchInput" autocomplete="off" placeholder="Search ZERO" aria-label="Search ZERO"><button type="submit">SEARCH</button></form><button id="closeSearch" class="close-search">×</button></div>
-<main id="home">
-<section class="hero"><div class="hero-copy"><p class="eyebrow">ZERO / 001 — NEW BRAND</p><h1>START FROM<br><em>ZERO.</em></h1><p class="hero-text">A new independent streetwear label built around clean design, individuality, and the idea that something can begin with nothing.</p><a class="button" href="#new">EXPLORE NEW</a></div><div class="hero-mark" aria-hidden="true"><span>0</span></div></section>
-<section class="ticker" aria-label="Brand statement"><span>ZERO / NO LIMITS</span><span>ZERO / BUILT DIFFERENT</span><span>ZERO / START HERE</span></section>
-<section class="section" id="new"><div class="section-head"><div><p class="eyebrow">01 / NEW</p><h2>THE FIRST DROP</h2></div><a href="#shop">VIEW ALL →</a></div><div class="editorial-grid"><article class="feature-card dark"><div class="card-number">01</div><div><p>COMING SOON</p><h3>ZERO<br>CORE</h3></div></article><article class="feature-card light"><div class="card-number">02</div><div><p>COMING SOON</p><h3>ZERO<br>FORM</h3></div></article></div></section>
-<section class="section shop-section" id="shop"><div class="section-head"><div><p class="eyebrow">02 / SHOP</p><h2>COLLECTIONS</h2></div></div><div class="collection-list"><a href="#new"><span>001</span><strong>CORE</strong><small>ESSENTIALS</small><b>→</b></a><a href="#new"><span>002</span><strong>FORM</strong><small>STATEMENT PIECES</small><b>→</b></a><a href="#new"><span>003</span><strong>ZERO LAB</strong><small>EXPERIMENTAL</small><b>→</b></a></div></section>
-<section class="story" id="story"><div><p class="eyebrow">03 / THE IDEA</p><h2>NOTHING IS<br>THE LIMIT.</h2></div><p>ZERO is a clean slate. No fixed rules, no need to follow what already exists. The brand is about starting small, building with purpose, and creating pieces that feel like you.</p></section>
-<section class="section journal" id="journal"><div class="section-head"><div><p class="eyebrow">04 / JOURNAL</p><h2>UPDATES</h2></div></div><article class="journal-item"><span>COMING SOON</span><h3>ZERO / FIRST CHAPTER</h3><p>Follow the build as ZERO moves from an idea into a real streetwear label.</p></article></section>
-<section class="contact" id="contact"><p class="eyebrow">05 / CONTACT</p><h2>STAY CLOSE.</h2><p>For launches, updates, and future drops.</p><a class="button" href="mailto:hello@zero.example">GET IN TOUCH</a></section>
-</main>
-<footer><span>ZERO © 2026</span><span>BUILT FROM ZERO.</span><a href="#home">BACK TO TOP ↑</a></footer>
-<script src="script.js" defer></script></body></html>
+  <div class="announcement">FREE SHIPPING ON ORDERS OVER ₱2,500 <span>•</span> ZERO / BUILT FROM NOTHING.</div>
+  <header class="site-header" id="top">
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><i></i><i></i><i></i></button>
+    <a class="logo" href="#top" aria-label="ZERO home">ZERO</a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="#new">NEW</a><a href="#shop">SHOP</a><a href="#story">STORY</a><a href="#journal">JOURNAL</a>
+    </nav>
+    <div class="header-actions">
+      <button class="text-btn" id="searchBtn">SEARCH</button>
+      <button class="bag-btn" id="bagBtn">BAG <span id="bagCount">0</span></button>
+    </div>
+  </header>
+
+  <aside class="menu" id="menu" aria-hidden="true">
+    <div class="menu-inner">
+      <div class="menu-head"><span>MENU</span><button id="closeMenu" aria-label="Close menu">×</button></div>
+      <nav><a href="#new">NEW <small>01</small></a><a href="#shop">SHOP <small>02</small></a><a href="#story">STORY <small>03</small></a><a href="#journal">JOURNAL <small>04</small></a></nav>
+      <div class="menu-foot">ZERO / 001<br>BUILT FROM NOTHING.</div>
+    </div>
+  </aside>
+  <div class="overlay" id="overlay"></div>
+
+  <section class="search-panel" id="searchPanel" aria-hidden="true">
+    <form id="searchForm"><input id="searchInput" placeholder="Search ZERO" autocomplete="off"><button>SEARCH</button></form>
+    <button id="closeSearch" class="close-search" aria-label="Close search">×</button>
+    <p id="searchStatus"></p>
+  </section>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">ZERO / 001 — NEW BRAND</p>
+        <h1>START<br><em>FROM ZERO.</em></h1>
+        <p class="hero-text">Independent streetwear built around clean design, individuality, and the idea that something can begin with nothing.</p>
+        <a class="button" href="#new">SHOP THE DROP</a>
+      </div>
+      <div class="hero-art" aria-label="ZERO 001 editorial graphic"><span>0</span><b>001</b><small>THE FIRST<br>DROP</small></div>
+    </section>
+
+    <div class="ticker"><span>ZERO / NO LIMITS</span><span>ZERO / BUILT DIFFERENT</span><span>ZERO / START HERE</span></div>
+
+    <section class="shop-section" id="new">
+      <div class="section-head"><div><p class="eyebrow">01 / NEW</p><h2>THE FIRST DROP</h2></div><a href="#shop">VIEW ALL →</a></div>
+      <div class="products" id="productGrid">
+        <article class="product" data-name="ZERO CORE TEE" data-category="tees" data-price="1100">
+          <button class="product-visual visual-one" data-add="ZERO CORE TEE" data-price="1100"><span>ZERO</span><small>CORE / 001</small></button>
+          <div class="product-info"><div><p>ZERO CORE TEE</p><span>ESSENTIALS</span></div><strong>₱1,100</strong></div>
+        </article>
+        <article class="product" data-name="ZERO FORM TEE" data-category="tees" data-price="1250">
+          <button class="product-visual visual-two" data-add="ZERO FORM TEE" data-price="1250"><span>FORM</span><small>STATEMENT / 002</small></button>
+          <div class="product-info"><div><p>ZERO FORM TEE</p><span>STATEMENT PIECE</span></div><strong>₱1,250</strong></div>
+        </article>
+        <article class="product" data-name="ZERO LAB HOODIE" data-category="hoodies" data-price="1850">
+          <button class="product-visual visual-three" data-add="ZERO LAB HOODIE" data-price="1850"><span>ZERO</span><small>LAB / 003</small></button>
+          <div class="product-info"><div><p>ZERO LAB HOODIE</p><span>EXPERIMENTAL</span></div><strong>₱1,850</strong></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="category-section" id="shop">
+      <div class="section-head"><div><p class="eyebrow">02 / SHOP</p><h2>COLLECTIONS</h2></div></div>
+      <div class="collection-list">
+        <button data-filter="all"><span>01</span><strong>ALL</strong><small>EVERYTHING</small><b>→</b></button>
+        <button data-filter="tees"><span>02</span><strong>TEES</strong><small>ESSENTIAL + STATEMENT</small><b>→</b></button>
+        <button data-filter="hoodies"><span>03</span><strong>HOODIES</strong><small>HEAVY / EVERYDAY</small><b>→</b></button>
+      </div>
+    </section>
+
+    <section class="story" id="story"><div><p class="eyebrow">03 / THE IDEA</p><h2>NOTHING IS<br>THE LIMIT.</h2></div><p>ZERO is a clean slate. No fixed rules, no need to follow what already exists. The brand is about starting small, building with purpose, and creating pieces that feel like you.</p></section>
+
+    <section class="journal" id="journal"><div class="section-head"><div><p class="eyebrow">04 / JOURNAL</p><h2>UPDATES</h2></div></div><article><span>COMING SOON</span><h3>ZERO / FIRST CHAPTER</h3><p>Follow the build as ZERO moves from an idea into a real streetwear label.</p></article></section>
+
+    <section class="contact"><p class="eyebrow">05 / CONTACT</p><h2>STAY CLOSE.</h2><p>For launches, updates, and future drops.</p><a class="button dark" href="mailto:hello@zero.example">GET IN TOUCH</a></section>
+  </main>
+
+  <aside class="cart" id="cart" aria-hidden="true"><div class="cart-head"><strong>YOUR BAG</strong><button id="closeCart">×</button></div><div id="cartItems"></div><div class="cart-total"><span>TOTAL</span><strong id="cartTotal">₱0</strong></div><button class="checkout" id="checkout">CHECKOUT</button><p class="cart-note">Checkout is currently a demo. Connect your preferred payment/shipping service when you're ready to sell live.</p></aside>
+  <footer><span>ZERO © 2026</span><span>BUILT FROM ZERO.</span><a href="#top">BACK TO TOP ↑</a></footer>
+  <script src="script.js" defer></script>
+</body>
+</html>
