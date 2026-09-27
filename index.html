@@ -1,1 +1,45 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="ZERO — independent streetwear. From Zero, We Build."><title>ZERO — 001 ORIGIN</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"></head><body><div class="ticker">ZERO 001 / ORIGIN — FIRST DROP / FROM ZERO, WE BUILD.</div><header><a class="brand" href="#top">ZERO<span>®</span></a><nav><a href="#shop">SHOP</a><a href="#collections">COLLECTIONS</a><a href="#about">ABOUT</a></nav><button class="bag" onclick="openBag()">BAG <b id="bagCount">0</b></button></header><main id="top"><section class="hero"><div class="hero-copy"><p class="mono">001 / ORIGIN / PH</p><h1>START<br>AT <em>ZERO.</em></h1><p class="lead">Independent streetwear for people building something from the ground up.</p><a class="cta" href="#shop">SHOP 001 <span>↗</span></a></div><div class="hero-art"><div class="orbit o1"></div><div class="orbit o2"></div><div class="zero">0</div><div class="serial">Z-001<br>ORIGIN<br>2026</div></div></section><section class="statement"><span>THE STARTING POINT</span><strong>ZERO ISN'T<br>THE END.</strong><p>It is the moment before everything changes.</p></section><section id="shop" class="shop"><div class="section-top"><div><p class="mono">DROP 001</p><h2>ORIGIN</h2></div><a href="#shop">VIEW ALL ↗</a></div><div class="grid"><article class="card"><button class="visual visual-a" onclick="addBag('ORIGIN TEE')"><span>0</span><small>ZERO / 001</small></button><div class="meta"><h3>ORIGIN TEE</h3><p>₱—</p></div><button class="add" onclick="addBag('ORIGIN TEE')">ADD TO BAG +</button></article><article class="card"><button class="visual visual-b" onclick="addBag('MECHA ZERO TEE')"><span>ZERO</span><small>MECHA / 001</small></button><div class="meta"><h3>MECHA ZERO TEE</h3><p>₱—</p></div><button class="add" onclick="addBag('MECHA ZERO TEE')">ADD TO BAG +</button></article><article class="card"><button class="visual visual-c" onclick="addBag('ARCHIVE TEE')"><span>ARCHIVE</span><small>ZERO / 001</small></button><div class="meta"><h3>ARCHIVE TEE</h3><p>₱—</p></div><button class="add" onclick="addBag('ARCHIVE TEE')">ADD TO BAG +</button></article><article class="card"><button class="visual visual-d" onclick="addBag('ZERO HEAVY TEE')"><span>HEAVY</span><small>CORE / 001</small></button><div class="meta"><h3>ZERO HEAVY TEE</h3><p>₱—</p></div><button class="add" onclick="addBag('ZERO HEAVY TEE')">ADD TO BAG +</button></article></div><p class="placeholder-note">PRODUCT ART + PRICES ARE PLACEHOLDERS. YOUR REAL DROP PHOTOS CAN REPLACE THESE PANELS.</p></section><section id="collections" class="collections"><div class="collection-main"><p class="mono">COLLECTION 002 / COMING NEXT</p><h2>MACHINE<br>LANGUAGE</h2><a class="outline" href="#contact">DISCOVER ↗</a></div><div class="collection-side"><div class="scan">[ ZERO ]<br>[ SYSTEM: BUILDING ]<br>[ SIGNAL: ACTIVE ]</div><div class="barcode">|||| ||| |||||| || ||||</div></div></section><section id="about" class="about"><p class="mono">WHY ZERO?</p><h2>FROM NOTHING<br>TO <em>SOMETHING.</em></h2><div><p>ZERO is a Philippine independent label built around ambition, progress and the courage to begin.</p><p>Every drop is a chapter. Every piece carries the idea that you don't need a head start to start.</p></div></section><section id="contact" class="contact"><p class="mono">ZERO / COMMUNITY</p><h2>BUILD<br>WITH US.</h2><a class="cta" href="#top">BACK TO TOP ↑</a></section></main><footer><strong>ZERO®</strong><span>FROM ZERO, WE BUILD.</span><span>© 2026</span></footer><dialog id="bag"><button class="close" onclick="closeBag()">×</button><p class="mono">YOUR BAG</p><h2 id="bagTitle">EMPTY</h2><div id="bagItems"></div><p class="bag-note">Ordering will be connected to your official social/checkout channel when your products are ready.</p></dialog><script src="script.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="ZERO — an independent streetwear label built from the ground up.">
+<meta name="theme-color" content="#101010">
+<title>ZERO — From Zero, We Build.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="ticker" aria-hidden="true">ZERO / 001 — ORIGIN · FROM ZERO, WE BUILD. · ZERO / 001 — ORIGIN · FROM ZERO, WE BUILD.</div>
+<header class="site-header" id="top">
+  <a class="brand" href="#top" aria-label="ZERO home">ZERO<span>®</span></a>
+  <nav id="mainNav" aria-label="Main navigation">
+    <a href="#collections">COLLECTIONS</a><a href="#about">ABOUT</a><a href="#journal">JOURNAL</a><a href="#contact">CONTACT</a>
+  </nav>
+  <div class="header-actions"><button class="icon-btn" id="searchBtn" aria-label="Open search">⌕</button><button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button></div>
+</header>
+<main>
+<section class="hero">
+  <div class="hero-copy"><p class="mono">001 / ORIGIN / PH</p><h1>START<br>AT <em>ZERO.</em></h1><p class="lead">An independent label for people building something from the ground up.</p><a class="cta" href="#about">ENTER ZERO <span>↘</span></a></div>
+  <div class="hero-art" aria-label="ZERO identity graphic"><div class="orbit o1"></div><div class="orbit o2"></div><div class="hero-zero">0</div><div class="serial">Z—001<br>ORIGIN<br>2026</div></div>
+</section>
+<section class="statement"><p class="mono">THE STARTING POINT</p><strong>ZERO ISN'T<br>THE END.</strong><p>It is the moment before everything changes.</p></section>
+<section id="collections" class="collections">
+  <div class="section-top"><div><p class="mono">01 / COLLECTIONS</p><h2>BUILT IN<br>CHAPTERS.</h2></div><span class="section-count">COMING SOON</span></div>
+  <div class="collection-grid">
+    <button class="collection-card active" data-collection="001"><span class="collection-num">001</span><span class="collection-title">ORIGIN</span><span class="collection-meta">THE BEGINNING ↗</span></button>
+    <button class="collection-card" data-collection="002"><span class="collection-num">002</span><span class="collection-title">MACHINE</span><span class="collection-meta">NEXT CHAPTER ↗</span></button>
+    <button class="collection-card" data-collection="003"><span class="collection-num">003</span><span class="collection-title">UNKNOWN</span><span class="collection-meta">EXPERIMENTAL ↗</span></button>
+  </div>
+  <div class="collection-detail" id="collectionDetail"><span>SELECTED / 001</span><strong>ORIGIN</strong><p>The first chapter. A visual language built around starting with nothing and choosing to build.</p></div>
+</section>
+<section id="about" class="about"><div><p class="mono">02 / WHY ZERO?</p><h2>FROM NOTHING<br>TO <em>SOMETHING.</em></h2></div><div class="about-copy"><p>ZERO is a Philippine independent label built around ambition, progress, and the courage to begin.</p><p>Every chapter is a reminder: you don't need a head start to start.</p><div class="specs"><span>ORIGIN / PH</span><span>STATUS / BUILDING</span><span>EST. / 2026</span></div></div></section>
+<section id="journal" class="journal"><div class="section-top"><div><p class="mono">03 / JOURNAL</p><h2>THE<br>PROCESS.</h2></div><span class="section-count">UPDATES</span></div><div class="journal-list"><article><span>001 / 2026</span><h3>ZERO BEGINS HERE.</h3><p>The first chapter is being built from the ground up.</p></article><article><span>002 / 2026</span><h3>THE LANGUAGE OF ZERO.</h3><p>A visual system in progress: symbols, numbers, machines and movement.</p></article></div></section>
+<section id="contact" class="contact"><p class="mono">04 / COMMUNITY</p><h2>BUILD<br>WITH US.</h2><p>Join the ZERO mailing list for launch announcements, future chapters and studio notes.</p><form id="subscribeForm" class="subscribe"><label class="sr-only" for="email">Email address</label><input id="email" name="email" type="email" placeholder="YOUR EMAIL" required autocomplete="email"><button type="submit">JOIN ↗</button></form><p id="formMessage" class="form-message" role="status"></p><div class="socials"><a href="#" data-coming="Facebook">FACEBOOK</a><a href="#" data-coming="Instagram">INSTAGRAM</a><a href="#" data-coming="TikTok">TIKTOK</a></div></section>
+</main>
+<footer><strong>ZERO®</strong><span>FROM ZERO, WE BUILD.</span><span>© 2026</span></footer>
+<div class="search-panel" id="searchPanel" hidden><button class="close-search" id="closeSearch" aria-label="Close search">×</button><label for="siteSearch">SEARCH ZERO</label><input id="siteSearch" type="search" placeholder="TYPE TO SEARCH..." autocomplete="off"><div id="searchResults"></div></div>utton>
+<script src="script.js"></script>
+</body></html>
